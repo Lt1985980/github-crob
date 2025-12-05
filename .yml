@@ -1,0 +1,13 @@
+name: Signal Notify on push
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  send-callback:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Call server
+      run: |
+        curl -X GET http://YOUR.SERVER.IP:8080/signal
